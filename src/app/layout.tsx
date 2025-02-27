@@ -27,7 +27,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <header className="bg-amber-950 text-white flex justify-center items-center py-10">
+          Header
+        </header>
+        <div className="flex gap-4">
+          <div className="bg-slate-400 text-black w-[10%]">
+            <p>Side Bar</p>
+          </div>
+          <div className="w-[70%]">
+
+            {children}
+          </div>
+        </div>
+        <footer className="bg-amber-200 text-black flex justify-center items-center py-10">
+          Footer
+        </footer>
       </body>
     </html>
   );
