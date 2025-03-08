@@ -33,11 +33,19 @@ export default function RootLayout({
         <div className="flex gap-4">
           <div className="bg-slate-400 text-black w-[10%]">
             <p>Side Bar</p>
+            <ul>
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/about">About</a>
+              </li>
+              <li>
+                <a href="/blog">blog</a>
+              </li>
+            </ul>
           </div>
-          <div className="w-[70%]">
-
-            {children}
-          </div>
+          <div className="w-[70%]">{children}</div>
         </div>
         <footer className="bg-amber-200 text-black flex justify-center items-center py-10">
           Footer
