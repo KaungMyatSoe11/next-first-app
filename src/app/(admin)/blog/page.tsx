@@ -1,5 +1,8 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { PostContext } from "@/providers/PostProvider";
+import React, { useContext, useEffect, useState } from "react";
+import PostCard from "./_components/PostCard";
+import { Plus } from "lucide-react";
 
 
 //user info Type
@@ -20,23 +23,32 @@ interface PostType extends General {
 }
 
 function BlogPage() {
-  const [todos, setTodos] = useState<PostType[]>([]);
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json);
-        setTodos(json);
-      });
-  }, []);
+
+  const {posts}=useContext(PostContext)
+  // const [todos, setTodos] = useState<PostType[]>([]);
+  // useEffect(() => {
+  //   fetch("https://jsonplaceholder.typicode.com/posts")
+  //     .then((response) => response.json())
+  //     .then((json) => {
+  //       console.log(json);
+  //       setTodos(json);
+  //     });
+  // }, []);
 
   return (
-    <div className="h-[80vh] overflow-auto">
+    <div className="h-[100vh] overflow-auto">
       <h1 className="text-2xl font-bold">Blog Page</h1>
-      <div className="overflow-scroll">
-        {todos.map((todo: PostType) => (
-          <p key={todo.id}>{todo.title}</p>
-        ))}
+      <div className="grid grid-cols-4 space-x-4 py-6" >
+       {
+        posts.map((post)=>(
+          <PostCard post={post} key={post.id}/>
+        ))
+       }
+
+       {/* create component */}
+       <div className="border cursor-pointer border-slate-100 px-4 py-2 rounded-sm flex items-center justify-center group transition-all ease-in-out duration-300 hover:border-slate-700 ">
+        <Plus size={24} className="text-slate-200 delay-100 transition-all ease-in-out duration-300 group-hover:text-slate-700 "/>
+       </div>
       </div>
     </div>
   );
