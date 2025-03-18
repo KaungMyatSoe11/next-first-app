@@ -3,20 +3,26 @@
     {
       "id": 1,
       "title": "Eloquent Javascript",
-      "description": "Best JS",
-      "categories": ["Javascript", "Programming"]
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "created": "03/25/2015",
+      "updated": "10/25/2015",
+      "comment": ""
     },
     {
       "id": 2,
       "title": "Laravel from Scratch",
-      "description": "Best PHP framework book",
-      "categories": ["PHP", "Programming", "Laravel"]
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "created": "03/25/2015",
+      "updated": "10/25/2015",
+      "comment": ""
     },
     {
       "id": 3,
       "title": "React Basic",
-      "description": "Best JS",
-      "categories": ["React", "Programming", "Javascript"]
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "created": "03/25/2015",
+      "updated": "10/25/2015",
+      "comment": ""
     }
   ]
 }
