@@ -1,5 +1,5 @@
 {
-  "books": [
+  "posts": [
     {
       "id": 1,
       "title": "Eloquent Javascript",
@@ -23,6 +23,13 @@
       "created": "03/25/2015",
       "updated": "10/25/2015",
       "comment": ""
+    },
+    {
+      "id": 61877263199024220,
+      "title": "lajsdklfjklsjfl",
+      "content": "l;aksdjfklsjfklsjdf",
+      "createdAt": "2025-03-18T14:37:42.585Z",
+      "updatedAt": "2025-03-18T14:37:42.585Z"
     }
   ]
 }
