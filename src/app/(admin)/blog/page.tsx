@@ -38,7 +38,7 @@ function BlogPage() {
   return (
     <div className="h-[100vh] overflow-auto">
       <h1 className="text-2xl font-bold">Blog Page</h1>
-      <div className="grid grid-cols-4 space-x-4 py-6">
+      <div className="grid grid-cols-4 space-x-4 space-y-2 py-6">
         {posts.map((post) => (
           <PostCard post={post} key={post.id} />
         ))}
@@ -46,7 +46,7 @@ function BlogPage() {
         {/* create component */}
         <div
           onClick={() => setOpen(true)}
-          className="border cursor-pointer border-slate-100 px-4 py-2 rounded-sm flex items-center justify-center group transition-all ease-in-out duration-300 hover:border-slate-700 "
+          className="border cursor-pointer border-slate-100  px-4 py-2 rounded-sm flex items-center justify-center group transition-all ease-in-out duration-300 hover:border-slate-700 "
         >
           <Plus
             size={24}

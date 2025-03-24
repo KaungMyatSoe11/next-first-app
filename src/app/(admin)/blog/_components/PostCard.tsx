@@ -9,7 +9,7 @@ const PostCard = ({ post }: { post: Post }) => {
       <h1 className="font-bold text-lg">
         <Link href={`/blog/${post.id}`}>{post.title}</Link>
       </h1>
-      <p>posted {post.createdAt.toLocaleDateString()}</p>
+      <p>posted {new Date(post.createdAt).toLocaleDateString()}</p>
       <EditDropDown />
     </div>
   );

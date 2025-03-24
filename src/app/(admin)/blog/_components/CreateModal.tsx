@@ -25,6 +25,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Post } from "@/types";
 import { Textarea } from "@/components/ui/textarea";
 import { createPost } from "@/services/post";
+import { useContext } from "react";
+import { PostContext } from "@/providers/PostProvider";
 
 type CreateModalProps = {
   open: boolean;
@@ -33,28 +35,31 @@ type CreateModalProps = {
 
 const PostSchema = z.object({
   title: z.string().nonempty({ message: "Title is required" }),
-  content:z.string().nonempty({message:"Content is required"}),
+  content: z.string().nonempty({ message: "Content is required" }),
 });
 
 const CreateModal: React.FC<CreateModalProps> = ({ open, setOpen }) => {
+  const { CreatePost } = useContext(PostContext);
+
   const form = useForm<z.infer<typeof PostSchema>>({
     resolver: zodResolver(PostSchema),
     defaultValues: {
-      title: "alsjfkj",
-      content:""
+      title: "",
+      content: "",
     },
   });
 
   const onSubmit = (values: any) => {
-    const newPost={
-        id:Math.round(Math.random()*100000000000000000),
-        ...values,
-       createdAt:new Date(),
-       updatedAt:new Date(),
-    }
+    const newPost = {
+      id: Math.round(Math.random() * 100000000000000000),
+      ...values,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    };
 
-    console.log(newPost);
-    createPost(newPost);
+    CreatePost(newPost);
+    form.reset();
+    setOpen(false);
   };
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -81,7 +86,7 @@ const CreateModal: React.FC<CreateModalProps> = ({ open, setOpen }) => {
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
-                  <FormMessage/>
+                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -94,7 +99,7 @@ const CreateModal: React.FC<CreateModalProps> = ({ open, setOpen }) => {
                   <FormControl>
                     <Textarea {...field} />
                   </FormControl>
-                  <FormMessage/>
+                  <FormMessage />
                 </FormItem>
               )}
             />

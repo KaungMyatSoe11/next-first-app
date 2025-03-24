@@ -1,8 +1,11 @@
 "use client";
 import { EditIcon, Ellipsis, Trash } from "lucide-react";
-import { useState } from "react";
+import React, { useState } from "react";
 
-const EditDropDown = () => {
+type EditDropDownProps = {
+  id?: number;
+};
+const EditDropDown:React.FC<EditDropDownProps> = ({id}) => {
   const [isClick, setIsClick] = useState<boolean>(false);
 
   const handleClick = () => {
